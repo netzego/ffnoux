@@ -2,7 +2,7 @@
 # shellcheck disable=SC2260,SC2155
 
 # this might exit with errno 1. so we set $profile before activating strict mode for bash scripts
-profile="$(find /tmp -ignore_readdir_race -type d -name "ffnoux-??????" | head -n 1)"
+profile="$(find /tmp -type d -name "ffnoux-??????" &>/dev/null | head -n 1)"
 
 # activate strict mode
 set -eo pipefail
